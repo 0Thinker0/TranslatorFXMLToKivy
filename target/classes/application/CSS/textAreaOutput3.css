@@ -1,0 +1,80 @@
+.text-area {
+    -fx-background-insets: 0;
+    -fx-padding: 5px;
+    -fx-text-fill: #46494C;
+    -fx-background-radius: 0 0 10 10 ;
+    -fx-background-color: transparent, #e1e1e1, transparent, #e1e1e1;
+}
+
+.text-area .content {
+    -fx-background-color: transparent, #e1e1e1, transparent, #e1e1e1;
+    -fx-background-radius: 0 0 10 10 ;
+}
+
+.text-area .scroll-pane {
+    -fx-background-color: transparent;
+}
+.text-area .scroll-pane .viewport{
+    -fx-background-color: transparent;
+}
+.text-area .scroll-pane .content{
+    -fx-background-color: transparent;
+}
+
+.text-area:focused .content {
+    -fx-background-color: transparent, #e1e1e1, transparent, #e1e1e1;
+}
+
+.text-area:focused {
+    -fx-highlight-fill: #7ecfff;
+}
+
+.text-area .content {
+    
+    -fx-highlight-fill: #7ecfff;
+}
+
+.text-area *.scroll-bar *.increment-button,
+.text-area *.scroll-bar *.decrement-button{
+    -fx-background-color: null;
+    -fx-background-radius: 0;
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+    -fx-shape: null;
+}
+.text-area *.scroll-bar *.increment-arrow,
+.text-area *.scroll-bar *.decrement-arrow{
+    -fx-background-color: null;
+    -fx-background-radius: 0;
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+    -fx-shape: null;
+}
+
+.text-area .scroll-bar:vertical .thumb{
+    -fx-background-color:derive(black,90%);
+   -fx-background-insets: 0, 0, 0;
+   -fx-background-radius: 10;
+   -fx-pref-width: 6;
+}
+
+.text-area .scroll-pane .corner {    
+    -fx-background-color: transparent ;
+}
+
+.text-area .scroll-bar:horizontal .thumb{
+    -fx-background-color:derive(black,90%);
+   -fx-background-insets: 0, 0, 0;
+   -fx-background-radius: 10;
+   -fx-pref-height: 6;
+}
+
+
+.text-area .scroll-bar:vertical{
+    -fx-background-radius: 10;
+    -fx-pref-width: 6;
+}
+.text-area .scroll-bar:horizontal{
+    -fx-background-radius: 10;
+    -fx-pref-height: 6;
+}

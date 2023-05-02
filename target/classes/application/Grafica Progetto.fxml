@@ -1,0 +1,601 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.media.MediaView?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: F0F0F0; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 6, 0, 0.0, 3.0);" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.FFKtranslatorController">
+   <children>
+      <Label fx:id="onLeftPaneText" layoutX="76.0" layoutY="54.0" prefHeight="17.0" prefWidth="154.0" text="Input" textFill="#0000004d" />
+      <StackPane fx:id="stackPaneOutput" layoutX="689.0" layoutY="78.0" prefHeight="511.0" prefWidth="297.0" style="-fx-border-radius: 50px; -fx-background-radius: 10;">
+         <children>
+            <Pane fx:id="historyPaneOutput" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: F0F0F0; -fx-background-radius: 10;">
+               <children>
+                  <Pane fx:id="nameOutputPane1" prefHeight="24.0" prefWidth="297.0" style="-fx-background-color: #2B2B2B; -fx-background-radius: 10 10 0 0;">
+                     <children>
+                        <Text fx:id="fileNameOutput1" fill="WHITE" layoutX="10.0" layoutY="17.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="276.443359375" />
+                     </children>
+                  </Pane>
+                  <TextArea fx:id="sorceOutput" editable="false" layoutY="24.0" prefHeight="212.0" prefWidth="297.0" stylesheets="@CSS/textAreaOutput2.css" />
+                  <TextArea fx:id="convertionOutput" editable="false" layoutY="299.0" prefHeight="212.0" prefWidth="297.0" stylesheets="@CSS/textAreaOutput2.css" />
+                  <Label fx:id="onRightPaneText1" layoutX="14.0" layoutY="247.0" prefHeight="17.0" prefWidth="154.0" text="Conversione" textFill="#0000004d" />
+                  <Pane fx:id="nameOutputPane11" layoutY="275.0" prefHeight="24.0" prefWidth="297.0" style="-fx-background-color: #2B2B2B; -fx-background-radius: 10 10 0 0;">
+                     <children>
+                        <Text fx:id="fileNameOutput11" fill="WHITE" layoutX="10.0" layoutY="17.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="276.443359375" />
+                     </children>
+                  </Pane>
+               </children></Pane>
+            <Pane fx:id="translatorPaneOutput" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="479.0" prefWidth="297.0" style="-fx-background-color: white; -fx-background-radius: 10;" StackPane.alignment="CENTER">
+               <children>
+                  <TextArea fx:id="textAreaCode" editable="false" layoutY="22.0" prefHeight="488.0" prefWidth="297.0" stylesheets="@CSS/textAreaOutput2.css" />
+                  <Pane fx:id="nameOutputPane" prefHeight="24.0" prefWidth="297.0" style="-fx-background-color: #2B2B2B; -fx-background-radius: 10 10 0 0;">
+                     <children>
+                        <Text fx:id="fileNameOutput" fill="WHITE" layoutX="10.0" layoutY="17.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="276.443359375" />
+                     </children>
+                  </Pane>
+               </children></Pane>
+         </children>
+      </StackPane>
+      <StackPane layoutX="64.0" layoutY="77.0" prefHeight="516.0" prefWidth="607.0">
+         <children>
+            <Pane fx:id="translationPane" prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <Pane fx:id="recentConvertions" layoutY="271.0" prefHeight="242.0" prefWidth="607.0">
+                     <children>
+                        <Pane prefHeight="90.0" prefWidth="607.0" style="-fx-background-color: #ffffff; -fx-background-radius: 10; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 6, 0, 0.0, 3.0);">
+                           <children>
+                              <HBox alignment="CENTER_LEFT" prefHeight="90.0" prefWidth="607.0" spacing="10.0">
+                                 <children>
+                                    <ImageView fitHeight="50.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@RisorseGrafiche/file-text.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Text fill="#717475" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="133.13671875">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </Text>
+                                    <Text fill="#717475" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="161.13671875">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </Text>
+                                    <Text fill="#717475" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="98.13671875" />
+                                    <Text fill="#717475" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="43.13671875" />
+                                 </children>
+                                 <padding>
+                                    <Insets left="20.0" />
+                                 </padding>
+                              </HBox>
+                           </children>
+                        </Pane>
+                        <HBox layoutY="109.0" prefHeight="57.0" prefWidth="607.0" spacing="20.0">
+                           <children>
+                              <Pane prefHeight="57.0" prefWidth="516.0" style="-fx-background-color: #ffffff; -fx-background-radius: 10; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 6, 0, 0.0, 3.0);">
+                                 <children>
+                                    <HBox alignment="CENTER_LEFT" layoutX="-1.0" prefHeight="57.0" prefWidth="526.0" spacing="20.0">
+                                       <padding>
+                                          <Insets left="20.0" />
+                                       </padding>
+                                    </HBox>
+                                 </children>
+                              </Pane>
+                              <Pane prefHeight="57.0" prefWidth="73.0" style="-fx-background-color: #ffffff; -fx-background-radius: 10; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 6, 0, 0.0, 3.0);">
+                                 <children>
+                                    <ImageView cache="true" cacheHint="QUALITY" fitHeight="22.0" fitWidth="22.0" layoutX="23.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+                                       <image>
+                                          <Image url="@RisorseGrafiche/rotate-cw.png" />
+                                       </image>
+                                       <viewport>
+                                          <Rectangle2D />
+                                       </viewport>
+                                    </ImageView>
+                                 </children>
+                              </Pane>
+                           </children>
+                        </HBox>
+                        <HBox layoutY="183.0" prefHeight="57.0" prefWidth="607.0" spacing="20.0">
+                           <children>
+                              <Pane prefHeight="57.0" prefWidth="516.0" style="-fx-background-color: #ffffff; -fx-background-radius: 10; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 6, 0, 0.0, 3.0);">
+                                 <children>
+                                    <HBox alignment="CENTER_LEFT" layoutX="-1.0" prefHeight="57.0" prefWidth="526.0" spacing="20.0">
+                                       <padding>
+                                          <Insets left="20.0" />
+                                       </padding>
+                                    </HBox>
+                                 </children>
+                              </Pane>
+                              <Pane prefHeight="57.0" prefWidth="73.0" style="-fx-background-color: #ffffff; -fx-background-radius: 10; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 6, 0, 0.0, 3.0);">
+                                 <children>
+                                    <ImageView cache="true" cacheHint="QUALITY" fitHeight="22.0" fitWidth="22.0" layoutX="23.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+                                       <image>
+                                          <Image url="@RisorseGrafiche/rotate-cw.png" />
+                                       </image>
+                                       <viewport>
+                                          <Rectangle2D />
+                                       </viewport>
+                                    </ImageView>
+                                 </children>
+                              </Pane>
+                           </children>
+                        </HBox>
+                        <Text fill="#515151" layoutX="177.0" layoutY="116.0" opacity="0.3" strokeType="OUTSIDE" strokeWidth="0.0" text="Nessuna Conversione Recente" visible="false">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </Pane>
+                  <Label layoutX="11.0" layoutY="248.0" prefHeight="17.0" prefWidth="154.0" text="Ultime conversioni" textFill="#0000004d" />
+                  <Pane fx:id="paneForDragging" onDragDropped="#FileDropped" onDragExited="#FileDragExited" onDragOver="#FileDrag" prefHeight="236.0" prefWidth="607.0" style="-fx-background-color: #ffffff; -fx-background-radius: 10; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 6, 0, 0.0, 3.0); -fx-border-style: dashed; -fx-border-radius: 10; -fx-border-color: #2B2B2B; -fx-border-width: 2;">
+                     <children>
+                        <ImageView cache="true" cacheHint="QUALITY" fitHeight="88.0" fitWidth="88.0" layoutX="260.0" layoutY="37.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+                           <image>
+                              <Image url="@RisorseGrafiche/upload-cloud.png" />
+                           </image>
+                           <viewport>
+                              <Rectangle2D />
+                           </viewport>
+                        </ImageView>
+                        <Text fx:id="dragText" fill="#717475cc" layoutX="258.0" layoutY="145.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Trascina qui il file" textAlignment="CENTER" />
+                        <Text fx:id="uploadButton" fill="#717475cc" layoutX="273.0" layoutY="165.0" onMouseClicked="#OpenFile" strokeType="OUTSIDE" strokeWidth="0.0" text="Carica il file" underline="true">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Text>
+                        <Pane fx:id="convertionPane" layoutX="24.0" layoutY="43.0" prefHeight="189.0" prefWidth="560.0" style="-fx-background-color: #ffffff;" visible="false">
+                           <children>
+                              <ImageView cache="true" cacheHint="QUALITY" fitHeight="88.0" fitWidth="88.0" layoutX="236.0" layoutY="-7.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+                                 <image>
+                                    <Image url="@RisorseGrafiche/ConvertionIcon.png" />
+                                 </image>
+                                 <viewport>
+                                    <Rectangle2D />
+                                 </viewport>
+                              </ImageView>
+                              <ProgressBar fx:id="progressBar" layoutX="191.0" layoutY="86.0" prefHeight="16.0" prefWidth="178.0" progress="0.0" scaleX="0.0" scaleY="0.0" style="-fx-background-color: #6f7273; -fx-background-insets: 3 3 4 3; -fx-background-radius: 20; -fx-padding: 0.75em;" />
+                              <Text fx:id="progressBarStatus" fill="#0000004c" layoutX="378.0" layoutY="98.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="88.0" />
+                              <Text fx:id="nameFileKV" fill="#6f7273" layoutX="200.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="161.13671875">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Text>
+                              <Text fx:id="textOutput" fill="#0000004c" layoutX="178.0" layoutY="137.0" strokeType="OUTSIDE" strokeWidth="0.0" text="See the result in output section" textAlignment="CENTER" visible="false" wrappingWidth="204.0">
+                                 <font>
+                                    <Font name="System Italic" size="12.0" />
+                                 </font>
+                              </Text>
+                              <ImageView fx:id="saveFile" cache="true" cacheHint="QUALITY" fitHeight="37.0" fitWidth="37.0" layoutX="262.0" layoutY="148.0" onMouseClicked="#SaveFile" pickOnBounds="true" preserveRatio="true" scaleX="0.0" scaleY="0.0" smooth="false">
+                                 <image>
+                                    <Image url="@RisorseGrafiche/SaveFile.png" />
+                                 </image>
+                                 <viewport>
+                                    <Rectangle2D />
+                                 </viewport>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </ImageView>
+                              <ImageView fx:id="closeConvertion" cache="true" cacheHint="QUALITY" fitHeight="25.0" fitWidth="25.0" layoutX="312.0" layoutY="154.0" onMouseClicked="#CloseConvertion" pickOnBounds="true" preserveRatio="true" scaleX="0.0" scaleY="0.0" smooth="false">
+                                 <image>
+                                    <Image url="@RisorseGrafiche/DeleteConvertion.png" />
+                                 </image>
+                                 <viewport>
+                                    <Rectangle2D />
+                                 </viewport>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </ImageView>
+                              <ImageView fx:id="repeatConvertion" cache="true" cacheHint="QUALITY" fitHeight="25.0" fitWidth="25.0" layoutX="224.0" layoutY="154.0" onMouseClicked="#RepeatConvertion" pickOnBounds="true" preserveRatio="true" scaleX="0.0" scaleY="0.0" smooth="false">
+                                 <image>
+                                    <Image url="@RisorseGrafiche/RepeatConvertion.png" />
+                                 </image>
+                                 <viewport>
+                                    <Rectangle2D />
+                                 </viewport>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </ImageView>
+                              <Pane fx:id="warningDarkPane" layoutX="-35.0" layoutY="-90.0" opacity="0.2" prefHeight="570.0" prefWidth="948.0" style="-fx-background-color: #2B2B2B;" visible="false" />
+                              <ImageView fx:id="warningIcon" fitHeight="24.0" fitWidth="24.0" layoutX="133.0" layoutY="79.0" onMouseEntered="#warningPaneVisible" onMouseExited="#warningPaneInvisible" pickOnBounds="true" preserveRatio="true" visible="false">
+                                 <image>
+                                    <Image url="@RisorseGrafiche/alert-triangle.png" />
+                                 </image>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </ImageView>
+                              <Pane fx:id="warningPane" layoutX="-6.0" layoutY="95.0" onMouseEntered="#warningPaneVisible" onMouseExited="#warningPaneInvisible" prefHeight="176.0" prefWidth="305.0" visible="false">
+                                 <children>
+                                    <ImageView fitHeight="166.0" fitWidth="297.0" layoutX="3.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@RisorseGrafiche/warningPane.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Label layoutX="129.0" layoutY="30.0" text="Warning" textFill="#eea25b" />
+                                    <TextArea fx:id="warningTextArea" editable="false" layoutX="16.0" layoutY="47.0" prefHeight="118.0" prefWidth="276.0" stylesheets="@CSS/WarningCss.css" />
+                                 </children>
+                              </Pane>
+                           </children>
+                        </Pane>
+                     </children>
+                  </Pane>
+               </children>
+            </Pane>
+            <Pane fx:id="historyPane" prefHeight="200.0" prefWidth="200.0" visible="false">
+               <children>
+                  <ScrollPane hbarPolicy="NEVER" layoutY="65.0" prefHeight="445.0" prefWidth="607.0" stylesheets="@CSS/scrollPane.css">
+                     <content>
+                        <VBox fx:id="listConvertions" prefWidth="607.0" />
+                     </content>
+                  </ScrollPane>
+                  <Pane prefHeight="54.0" prefWidth="607.0" style="-fx-background-radius: 10; -fx-background-color: #FFFFFF; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 6, 0, 0.0, 3.0);">
+                     <children>
+                        <HBox alignment="CENTER" prefHeight="54.0" prefWidth="607.0" spacing="140.0">
+                           <children>
+                              <Text fill="#717475" strokeType="OUTSIDE" strokeWidth="0.0" text="FXML" />
+                              <Text fill="#717475" strokeType="OUTSIDE" strokeWidth="0.0" text="Python" />
+                              <Text fill="#717475" strokeType="OUTSIDE" strokeWidth="0.0" text="Data" />
+                              <Text fill="#717475" strokeType="OUTSIDE" strokeWidth="0.0" text="Ora" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </Pane>
+               </children>
+            </Pane>
+         </children>
+      </StackPane>
+      <Pane onMouseDragged="#moveStage" onMousePressed="#mousePosition" prefHeight="30.0" prefWidth="860.0" style="-fx-background-color: #2B2B2B;">
+         <children>
+            <Label layoutX="14.0" layoutY="7.0" prefHeight="17.0" prefWidth="154.0" text="FFK translator" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Pane layoutX="859.0" prefHeight="30.0" prefWidth="141.0" style="-fx-background-color: fff;">
+               <children>
+                  <ImageView fitHeight="10.0" fitWidth="10.0" layoutX="66.0" layoutY="12.0" opacity="0.4" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@RisorseGrafiche/BigOrNot.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="closeApplicationIcon" fitHeight="10.0" fitWidth="10.0" layoutX="110.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@RisorseGrafiche/XClose.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <ImageView fx:id="minimizeApplicationIcon" fitHeight="10.0" fitWidth="10.0" layoutX="20.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@RisorseGrafiche/Small.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <Pane layoutX="94.0" layoutY="-2.0" onMouseClicked="#closeApplication" onMouseEntered="#redIcon" onMouseExited="#blackIcon" prefHeight="37.0" prefWidth="52.0">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Pane>
+                  <Pane layoutX="-1.0" layoutY="-1.0" onMouseClicked="#minimizeApplication" prefHeight="37.0" prefWidth="52.0">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Pane>
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+      <Pane layoutY="30.0" prefHeight="570.0" prefWidth="52.0" style="-fx-background-color: fff; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 0);;">
+         <children>
+            <ImageView fx:id="translationIcon" cache="true" cacheHint="QUALITY" fitHeight="57.0" fitWidth="28.0" layoutX="12.0" layoutY="26.0" onMouseClicked="#TranslationIconClicked" onMouseEntered="#MouseHomeEntered" onMouseExited="#MouseHomeExited" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@RisorseGrafiche/home.png" />
+               </image>
+               <viewport>
+                  <Rectangle2D />
+               </viewport>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="historyIcon" cache="true" cacheHint="QUALITY" fitHeight="57.0" fitWidth="28.0" layoutX="12.0" layoutY="82.0" onMouseClicked="#HistoryIconClicked" onMouseEntered="#MouseHistoryEntered" onMouseExited="#MouseHistoryExited" opacity="0.7" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@RisorseGrafiche/History.png" />
+               </image>
+               <viewport>
+                  <Rectangle2D />
+               </viewport>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="selectedIcon" cache="true" cacheHint="QUALITY" fitHeight="3.0" fitWidth="16.0" layoutX="18.0" layoutY="57.0" pickOnBounds="true">
+               <image>
+                  <Image url="@RisorseGrafiche/Line.png" />
+               </image>
+               <viewport>
+                  <Rectangle2D />
+               </viewport>
+            </ImageView>
+            <ImageView fx:id="infoIcon" cache="true" cacheHint="QUALITY" fitHeight="57.0" fitWidth="28.0" layoutX="12.0" layoutY="515.0" onMouseClicked="#InfoClicked" onMouseEntered="#MouseInfoEntered" onMouseExited="#MouseInfoExited" opacity="0.7" pickOnBounds="true" preserveRatio="true" smooth="false">
+               <image>
+                  <Image url="@RisorseGrafiche/Info.png" />
+               </image>
+               <viewport>
+                  <Rectangle2D />
+               </viewport>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="userIcon" fitHeight="28.0" fitWidth="28.0" layoutX="12.0" layoutY="138.0" onMouseClicked="#UserClicked" onMouseEntered="#MouseUserEntered" onMouseExited="#MouseUserExited" opacity="0.7" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@RisorseGrafiche/userIcon.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+         </children></Pane>
+      <Label fx:id="onRightPaneText" layoutX="700.0" layoutY="54.0" prefHeight="17.0" prefWidth="154.0" text="Output" textFill="#0000004d" />
+      <ImageView fx:id="maximizeIcon" cache="true" cacheHint="QUALITY" fitHeight="10.0" fitWidth="10.0" layoutX="968.0" layoutY="58.0" onMouseClicked="#expandOutput" opacity="0.7" pickOnBounds="true" preserveRatio="true" smooth="false">
+         <image>
+            <Image url="@RisorseGrafiche/maximize.png" />
+         </image>
+         <viewport>
+            <Rectangle2D />
+         </viewport>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView fx:id="toggleStyle" cache="true" cacheHint="QUALITY" fitHeight="12.0" fitWidth="12.0" layoutX="951.0" layoutY="57.0" onMouseClicked="#changeStyle" opacity="0.7" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@RisorseGrafiche/toggle-left.png" />
+         </image>
+         <viewport>
+            <Rectangle2D />
+         </viewport>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView fx:id="deleteOutput" fitHeight="9.0" fitWidth="9.0" layoutX="937.0" layoutY="59.0" onMouseClicked="#deleteOutput" opacity="0.7" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@RisorseGrafiche/XClose.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <Pane fx:id="infoPane" layoutX="59.0" layoutY="48.0" prefHeight="548.0" prefWidth="930.0" style="-fx-background-color: F0F0F0;" visible="false">
+         <children>
+            <ImageView fitHeight="161.0" fitWidth="276.0" layoutX="336.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+               <image>
+                  <Image url="@RisorseGrafiche/output-onlinegiftools.gif" />
+               </image>
+            </ImageView>
+            <Text fill="#717475" layoutX="429.0" layoutY="161.0" opacity="0.3" strokeType="OUTSIDE" strokeWidth="0.0" text="Sviluppatore" />
+            <Text fill="#717475" layoutX="391.0" layoutY="183.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gabriele Orlando">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Text>
+            <Text fill="#717475" layoutX="399.0" layoutY="232.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Università della Calabria" />
+            <Text fill="#717475" layoutX="355.0" layoutY="214.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Progetto per tesi di laurea in informatica" />
+            <Text fill="#717475" layoutX="14.0" layoutY="275.0" opacity="0.3" strokeType="OUTSIDE" strokeWidth="0.0" text="Scarica la versione più recente" />
+            <Pane layoutX="5.0" layoutY="285.0" prefHeight="57.0" prefWidth="921.0" style="-fx-background-color: ffffff; -fx-background-radius: 10; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 6, 0, 0.0, 3.0);">
+               <children>
+                  <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="14.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@RisorseGrafiche/github.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="14.0" fitWidth="14.0" layoutX="319.0" layoutY="22.0" onMouseClicked="#CopyLink" opacity="0.7" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@RisorseGrafiche/copy.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <Text fx:id="link" fill="#717475" layoutX="48.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="https://github.com/thinker_translatorFXMLToKivy" />
+                  <ImageView fitHeight="14.0" fitWidth="14.0" layoutX="339.0" layoutY="22.0" onMouseClicked="#OpenLink" opacity="0.7" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@RisorseGrafiche/external-link.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <Text fill="#717475" layoutX="809.0" layoutY="33.0" opacity="0.3" strokeType="OUTSIDE" strokeWidth="0.0" text="ver. Attuale:" />
+                  <Text fx:id="verDownloaded" fill="#717475" layoutX="877.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1.0">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#717475" layoutX="693.0" layoutY="33.0" opacity="0.3" strokeType="OUTSIDE" strokeWidth="0.0" text="ver. GitHub:" />
+                  <Text fx:id="verGitHub" fill="#717475" layoutX="761.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1.0">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Text>
+               </children>
+            </Pane>
+            <Text fill="#717475" layoutX="14.0" layoutY="373.0" opacity="0.3" strokeType="OUTSIDE" strokeWidth="0.0" text="Changelog" />
+            <Pane layoutX="6.0" layoutY="383.0" prefHeight="158.0" prefWidth="921.0" style="-fx-background-color: e1e1e1; -fx-background-radius: 10;">
+               <children>
+                  <TextArea fx:id="changelog" editable="false" prefHeight="158.0" prefWidth="921.0" style="-fx-background-color: ffffff; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 6, 0, 0.0, 3.0); -fx-background-radius: 10;" stylesheets="@CSS/textAreaOutput3.css" wrapText="true" />
+               </children>
+            </Pane>
+            <Text fx:id="verChangelog" fill="#515151" layoutX="80.0" layoutY="374.0" onMouseClicked="#ChangeLog" strokeType="OUTSIDE" strokeWidth="0.0" text="1.0">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Text>
+            <ImageView fx:id="arrowChangelog" fitHeight="4.0" fitWidth="7.0" layoutX="102.0" layoutY="368.0" onMouseClicked="#ChangeLog" pickOnBounds="true" preserveRatio="true" rotate="180.0">
+               <image>
+                  <Image url="@RisorseGrafiche/Arrow.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+         </children>
+      </Pane>
+      <Pane fx:id="userPane" layoutX="58.0" layoutY="47.0" prefHeight="548.0" prefWidth="938.0" style="-fx-background-color: F0F0F0;" visible="false">
+         <children>
+            <Pane layoutX="6.0" layoutY="107.0" prefHeight="437.0" prefWidth="921.0" style="-fx-background-color: e1e1e1; -fx-background-radius: 10;">
+               <children>
+                  <TextArea fx:id="activityTextArea" editable="false" prefHeight="437.0" prefWidth="921.0" style="-fx-background-radius: 10;" stylesheets="@CSS/textAreaOutput2.css" text="Nessuna operazione effettuata" wrapText="true" />
+               </children></Pane>
+            <Text fill="#717475" layoutX="20.0" layoutY="97.0" opacity="0.3" strokeType="OUTSIDE" strokeWidth="0.0" text="Operazioni effettuate" />
+            <Label layoutX="20.0" layoutY="23.0" text="Welcome," textFill="#2b2b2b">
+               <font>
+                  <Font size="36.0" />
+               </font></Label>
+            <Label fx:id="nameAccount" layoutX="183.0" layoutY="23.0" prefHeight="53.0" prefWidth="446.0" text="User!" textFill="#2b2b2b">
+               <font>
+                  <Font name="System Bold" size="36.0" />
+               </font></Label>
+            <Label layoutX="782.0" layoutY="84.0" opacity="0.3" text="File Tradotti:" textFill="#717475" />
+            <Label fx:id="translatedFileNum" layoutX="857.0" layoutY="82.0" prefHeight="20.0" prefWidth="45.0" text="0" textFill="#2b2b2b">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+         </children></Pane>
+      <StackPane fx:id="saveOptionPane" layoutX="-3.0" layoutY="30.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="577.0" prefWidth="1007.0" visible="false">
+         <children>
+            <Pane opacity="0.4" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #2B2B2B;" />
+            <Pane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="430.0" prefWidth="832.0">
+               <children>
+                  <Pane layoutX="303.0" layoutY="171.0" prefHeight="236.0" prefWidth="402.0" style="-fx-background-color: #fff; -fx-background-radius: 10;">
+                     <children>
+                        <Label layoutX="30.0" layoutY="58.0" prefHeight="44.0" prefWidth="343.0" text="Prima di salvare il file scegli se creare il file python per l'esecuzione e/o esportare le immagini." textFill="#2f2f2f" wrapText="true" />
+                        <Label layoutX="341.0" layoutY="202.0" onMouseClicked="#SaveFileAndAllAssets" text="Salva" textFill="#2f2f2f">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Label>
+                        <Pane layoutX="347.0" layoutY="1.0" onMouseClicked="#closeSaveOptionPane" onMouseEntered="#redIcon" onMouseExited="#blackIcon" prefHeight="37.0" prefWidth="52.0">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <children>
+                              <ImageView fitHeight="10.0" fitWidth="10.0" layoutX="21.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@RisorseGrafiche/XClose.png" />
+                                 </image>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </ImageView>
+                           </children>
+                        </Pane>
+                        <Pane prefHeight="37.0" prefWidth="343.0" style="-fx-background-color: #2B2B2B; -fx-background-radius: 10 0 0 0;">
+                           <children>
+                              <Label layoutX="14.0" layoutY="6.0" text="Salvataggio File" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="16.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Pane>
+                        <ImageView fx:id="filePython" fitHeight="24.0" fitWidth="24.0" layoutX="30.0" layoutY="124.0" onMouseClicked="#checkBoxPython" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@RisorseGrafiche/uncheck.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                        <ImageView fx:id="exportImage" fitHeight="24.0" fitWidth="24.0" layoutX="30.0" layoutY="154.0" onMouseClicked="#checkBoxImage" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@RisorseGrafiche/uncheck.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                        <Label layoutX="61.0" layoutY="128.0" onMouseClicked="#checkBoxPython" text="Crea file python precompilato per l'esecuzione" textFill="#2f2f2f">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Label>
+                        <Label layoutX="61.0" layoutY="158.0" onMouseClicked="#checkBoxImage" text="Esporta immagini" textFill="#2f2f2f">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Label>
+                     </children>
+                  </Pane>
+               </children>
+            </Pane>
+         </children>
+      </StackPane>
+      <Pane fx:id="moreOptionPane" layoutX="155.0" layoutY="36.0" onMouseExited="#hideMoreOptionPane" prefHeight="57.0" prefWidth="150.0" style="-fx-background-color: fff; -fx-background-radius: 0 10 10 10;" visible="false">
+         <children>
+            <Text fill="#717475" layoutX="12.0" layoutY="24.0" onMouseEntered="#showFXMLHoverEntered" onMouseExited="#showFXMLHoverExited" opacity="0.7" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-background-radius: 10;" text="Visualizza FXML" wrappingWidth="126.92578125">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Text>
+            <Text fill="#717475" layoutX="12.0" layoutY="44.0" onMouseEntered="#deleteHoverEntered" onMouseExited="#deleteHoverExited" opacity="0.7" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-background-radius: 10;" text="Elimina Conversione" wrappingWidth="126.92578125">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Text>
+         </children>
+      </Pane>
+      <Pane fx:id="allertPane" focusTraversable="true" opacity="0.0" prefHeight="22.0" prefWidth="242.0" style="-fx-background-color: B3D5DD; -fx-background-radius: 10;">
+         <children>
+            <Text fill="#515151" layoutY="15.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Link copiato negli appunti" textAlignment="CENTER" wrappingWidth="239.13671875" />
+         </children>
+      </Pane>
+      <Pane fx:id="tutorial" layoutY="30.0" prefHeight="570.0" prefWidth="1000.0" style="-fx-background-color: F0F0F0;">
+         <children>
+            <Label layoutX="942.0" layoutY="533.0" onMouseClicked="#tutorialHide" prefHeight="17.0" prefWidth="32.0" text="Skip">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Label>
+            <ImageView fitHeight="18.0" fitWidth="18.0" layoutX="918.0" layoutY="532.0" onMouseClicked="#tutorialHide" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@RisorseGrafiche/rotate-cw.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <MediaView fitHeight="500.0" fitWidth="970.0" layoutX="14.0" layoutY="14.0" />
+         </children>
+      </Pane>
+   </children>
+</Pane>

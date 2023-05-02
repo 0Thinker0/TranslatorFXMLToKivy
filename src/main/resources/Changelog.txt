@@ -1,0 +1,137 @@
+Changelog ver 1.2
+
+Novità:
+
+- Aggiunto supporto ai gradienti, ora è possibile impostare come bakcgroud color un gradient, con la possibilità di specificare la direzione (top, bottom, right, left)
+- Aggiunto sistema di warning, le incompatibilità irrisolvibili verranno segnalate con un warning dal sistema (questo non impedirà la corretta traduzione del file)
+- Aggiunta possibilità di esportare un file python dal quale eseguire direttamente l'interfaccia grafica kivy
+
+Descrizione:
+
+Questo progetto è stato sviluppato da Gabriele Orlando come progetto di tesi presso l'università della Calabria (Unical). Questo programma cerca di migliorare l'esperienza degli utenti python nella costruzione di un'interfaccia grafica, permettendo di tradurre un file fxml (generabile utilizzando tool come SceneBuilder per la costruzione visiva delle interfacce grafiche) in un file kivy, una libreria python che limita la costruzione delle interfacce grafiche alla scritta di esse tramite codice. 
+Questo permette non solo di migliorare la costruzione, poiché è possibile costruire e valutare lo stato dell'interfaccia grafica mentre la si sviluppa, ma permette di velocizzarne la creazione. Il traduttore è ancora in fase di testing, per tanto potrebbe essere soggetto a bug che verranno risolti tramite aggiornamento periodici.
+
+Funzionalità:
+
+Il traduttore permette di tradurre i seguenti layout fxml:
+
+ SplitPane
+
+ FlowPane
+
+ GridPane
+
+ StackPane
+
+ AnchorPane
+
+ ScrollPane
+
+ VBox
+
+ HBox
+
+ Pane
+
+Il traduttore permette di tradurre i seguenti elementi grafici fxml:
+
+ ImageView
+
+ ProgressBar
+
+ Label
+
+ Slider
+
+ RadioButton
+
+ ToggleButton
+
+ TextArea
+
+ PasswordField
+
+ Text
+
+ ComboBox
+
+ CheckBox
+
+ Button
+
+Il traduttore permette di tradurre le seguenti proprietà fxml:
+
+ Rotate
+
+ ToggleGroup
+
+ Selected
+
+ Spacing
+
+ WrappingWidth
+
+ PreserveRatio
+
+ Text
+
+ Underline
+
+ TextFill
+
+ Opacity
+
+ Alignment
+
+ Id
+
+ Padding
+
+ Position
+
+ Dimensions
+
+ Gradient
+ 
+Il traduttore permette di tradurre i seguenti stili grafici fxml:
+
+ DropShadow
+
+ Background Color
+
+ Background Radius
+
+ Border Radius
+
+ Border Color
+
+ Border Width
+
+ Background Image
+
+ Background size
+
+Il traduttore permette di tradurre i seguenti metodi input fxml:
+
+ OnMousePressed
+
+ OnMouseRelease
+
+ OnMouseMoved
+
+ OnMouseDragged
+
+ OnMouseClicked
+
+ OnKeyPressed
+
+ OnKeyReleased
+
+ OnKeyTyped
+
+ OnScroll
+
+ OnZoom
+
+ OnRotate 
+ 

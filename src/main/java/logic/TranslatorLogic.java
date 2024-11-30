@@ -18,7 +18,7 @@ import org.w3c.dom.NodeList;
 
 public class TranslatorLogic {
 	//Parte logica dell'applicazione
-	private AppLogic appLogic;
+	private FFKtranslatorLogic appLogic;
 	
 	//Variabile per l'aggiunta delle tabulazioni
 	private int tb;
@@ -50,7 +50,7 @@ public class TranslatorLogic {
   	//Setter//
   	//*******************************//
     
-	public void setAppLogic(AppLogic appLogic) {
+	public void setAppLogic(FFKtranslatorLogic appLogic) {
 		this.appLogic = appLogic;
 	}
 	
@@ -155,11 +155,11 @@ public class TranslatorLogic {
 	private void findWarning() {
 		
 		if(KV.contains("System")) {
-			warnings.add("Rilevato System Font: \n\tper questioni di compatibilità è consigliabile non usare il System Font");
+			addWarning("-Per questioni di incompatibilità non è possibile tradurre System-Font da javaFX a kivy.");
 		}
 		
 		if(KV.contains("GridLayout")) {
-			warnings.add("Rilevato Grid Layout: \n\tper questioni di compatibilità è consigliabile non lasciare le celle del gridPane vuote, ma riempirle con del layout");
+			addWarning("-Per questioni di incompatibilità ti suggeriamo di riempire il grid layout con altri layout vuoti.");
 		}
 	}
 	
@@ -549,6 +549,15 @@ public class TranslatorLogic {
 			if(node.getAttributes().getNamedItem("name") != null) {
 				addTab();
 	        	KV += "\tfont_name: \"" + node.getAttributes().getNamedItem("name").getNodeValue().replaceAll(" ", "-") + "\"\n";
+	        	if(node.getAttributes().getNamedItem("name").getNodeValue().contains("Bold")) {
+					addTab();
+		        	KV += "\tbold: True\n";
+	        	}
+	        	
+	        	if(node.getAttributes().getNamedItem("name").getNodeValue().contains("Italic")) {
+					addTab();
+		        	KV += "\titalic: True\n";
+	        	}
 			}else {
 				addTab();
 				KV += "\tfont_name: \"System-Regular\"\n";
@@ -604,7 +613,7 @@ public class TranslatorLogic {
 		
 		//Aggiunta warning margin, a causa di problemi di compatibilità kivy non possiede il concetto di margine, quindi non può essere tradotto
 		if(node.getAttributes().getNamedItem("margin") != null) {
-			warnings.add("Rilevata proprietà margine: \n\tper questioni di compatibilità è consigliabile non utilizzare i margini");
+			addWarning("-Il concetto di margine in kivy non esiste, per tanto la conversione dei marginin non è possibile");
 		}
 		
 		if(node.getChildNodes().item(node.getChildNodes().getLength() - 2) != null && node.getChildNodes().item(node.getChildNodes().getLength() - 2).getNodeName().equals("padding"))
@@ -1232,6 +1241,8 @@ public class TranslatorLogic {
 			addTab();
             KV += "\ton_touch_down: root." + event.substring(1, event.length()) + "()\n";
             
+            addWarning("-Rilevato onMousePressed: questo metodo di input, insieme a onMouseClicked, in kivy vengono tradotto con lo stesso metodo on_touch_down");
+            
             methods.add(event.substring(1, event.length()));
 		}
 		if (node.getAttributes().getNamedItem("onMouseReleased") != null) {
@@ -1248,6 +1259,8 @@ public class TranslatorLogic {
 			addTab();
             KV += "\ton_touch_move: root." + event.substring(1, event.length()) + "()\n";
             
+            addWarning("-Rilevato onMouseMoved: questo metodo di input, insieme a onMouseDragged, in kivy vengono tradotti con lo stesso metodo on_touch_move");
+            
             methods.add(event.substring(1, event.length()));
 		}
 		if (node.getAttributes().getNamedItem("onMouseDragged") != null) {
@@ -1256,6 +1269,8 @@ public class TranslatorLogic {
 			addTab();
             KV += "\ton_touch_move: root." + event.substring(1, event.length()) + "()\n";
             
+            addWarning("-Rilevato onMouseDragged: questo metodo di input, insieme a onMouseMoved, in kivy vengono tradotto con lo stesso metodo on_touch_move");
+            
             methods.add(event.substring(1, event.length()));
 		}
 		if (node.getAttributes().getNamedItem("onMouseClicked") != null) {
@@ -1263,6 +1278,8 @@ public class TranslatorLogic {
 			
 			addTab();
             KV += "\ton_touch_down: root." + event.substring(1, event.length()) + "()\n";
+            
+            addWarning("-Rilevato onMouseClicked: questo metodo di input, insieme a onMousePressed, in kivy vengono tradotto con lo stesso metodo on_touch_down");
             
             methods.add(event.substring(1, event.length()));
 		}
@@ -1358,6 +1375,17 @@ public class TranslatorLogic {
 	private void addTab() {
 		for(int i = 0; i < tb; i++) {
 			KV += "\t";
+		}
+	}
+	
+	
+	private void addWarning(String warning) {
+		if(warnings.isEmpty())
+			warnings.add(warning);
+		
+		for(int i = 0; i < warnings.size(); i++) {
+			if(!warnings.get(i).equals(warning))
+				warnings.add(warning);
 		}
 	}
 }

@@ -10,7 +10,7 @@ public class Main {
 		TranslatorLogic translator = new TranslatorLogic();
 		
 		if(args.length == 0) {
-			FFKtranslator.main(args);
+			FFKtranslatorStart.main(args);
 		}else {
 			String fileFXML = args[0];
 			String path = args[1];

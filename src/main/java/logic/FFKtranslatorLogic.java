@@ -184,7 +184,7 @@ public class FFKtranslatorLogic {
 		DateTimeFormatter dtf5 = DateTimeFormatter.ofPattern("yyyy/MM/dd hh:mm");
 		
 		try {
-			FileWriter file = new FileWriter("Activity.txt", true);
+			FileWriter file = new FileWriter("src/main/resources/Activity.txt", true);
 			
 			switch(operation) {
 				case "add":

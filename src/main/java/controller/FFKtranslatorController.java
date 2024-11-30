@@ -406,7 +406,7 @@ public class FFKtranslatorController {
 		
 		File f = null;
 		try {
-			f = new File(getClass().getResource("/tutorial.mp4").toURI());
+			f = new File(getClass().getResource("/application/RisorseGrafiche/tutorial.mp4").toURI());
 		} catch (URISyntaxException e1) {
 			e1.printStackTrace();
 		}
@@ -1368,7 +1368,7 @@ public class FFKtranslatorController {
     	activityTextArea.setText("");
     	
     	try {
-			BufferedReader br = new BufferedReader(new FileReader(new File("Activity.txt")));
+			BufferedReader br = new BufferedReader(new FileReader(new File("src/main/resources/Activity.txt")));
 			String line;
 			while((line = br.readLine()) != null) {
 				activityTextArea.appendText(line);
